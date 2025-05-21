@@ -25,5 +25,5 @@ This application allows teachers to log in, add students, mark them as present o
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/student-attendance-tracker.git
+   git clone https://github.com/harrshitaSingh/student-attendance-tracker.git
    cd student-attendance-tracker
