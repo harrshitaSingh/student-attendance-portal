@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "name": "Rahul S",
+        "grade": "5th",
+        "address": "123 Main St, Delhi",
+        "contact": "9876543210"
+    },
+    {
+        "id": 2,
+        "name": "Harry Potter",
+        "grade": "5th",
+        "address": "4 Privet Drive, London",
+        "contact": "9876543211"
+    },
+    {
+        "id": 3,
+        "name": "Jhon C",
+        "grade": "5th",
+        "address": "22 Avenue St, Mumbai",
+        "contact": "9876543212"
+    },
+    {
+        "id": 6,
+        "name": "Nidha A",
+        "grade": "6th",
+        "address": "17 Hill View, Kochi",
+        "contact": "9876543213"
+    },
+    {
+        "id": 7,
+        "name": "Jemmy Jackson",
+        "grade": "6th",
+        "address": "11 Ocean Blvd, Goa",
+        "contact": "9876543214"
+    },
+    {
+        "id": 8,
+        "name": "Nil Boston",
+        "grade": "7th",
+        "address": "7 River Rd, Boston",
+        "contact": "9876543215"
+    },
+    {
+        "id": 9,
+        "name": "Nil Boston",
+        "grade": "7th",
+        "address": "7 River Rd, Boston",
+        "contact": "9876543216"
+    },
+    {
+        "id": 10,
+        "name": "Nil Boston",
+        "grade": "7th",
+        "address": "7 River Rd, Boston",
+        "contact": "9876543217"
+    },
+    {
+        "id": 11,
+        "name": "Nil Boston",
+        "grade": "7th",
+        "address": "7 River Rd, Boston",
+        "contact": "9876543218"
+    },
+    {
+        "id": 12,
+        "name": "Nil Boston",
+        "grade": "7th",
+        "address": "7 River Rd, Boston",
+        "contact": "9876543219"
+    },
+    {
+        "id": 13,
+        "name": "Nil Boston",
+        "grade": "7th",
+        "address": "7 River Rd, Boston",
+        "contact": "9876543220"
+    }
+]

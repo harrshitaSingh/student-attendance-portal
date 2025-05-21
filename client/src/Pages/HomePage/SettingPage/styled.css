@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Overall layout */
+.home-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw; /* Ensure it doesn't exceed viewport width */
+  background-color: #181818;
+  color: #fff;
+  overflow: hidden; /* Prevent both horizontal and vertical scrolling */
+}
+
+.main-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

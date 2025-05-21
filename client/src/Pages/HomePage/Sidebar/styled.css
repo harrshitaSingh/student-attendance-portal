@@ -1,0 +1,13 @@
+/* Sidebar layout styles */
+.sidebar .MuiDrawer-paper {
+  background-color: #121212;
+  color: #fff;
+  border-right: 2px solid #333;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Sidebar content box */
+.sidebar-content {
+  padding: 20px;
+}

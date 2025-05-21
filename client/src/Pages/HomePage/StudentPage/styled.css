@@ -1,0 +1,135 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Overall layout */
+.home-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    /* Ensure it doesn't exceed viewport width */
+    background-color: #181818;
+    color: #fff;
+    overflow: hidden;
+    /* Prevent both horizontal and vertical scrolling */
+}
+
+
+/* Main content area */
+.main-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 10vh;
+}
+
+
+.app-bar {
+    background: #fff;
+    color: black;
+    box-shadow: none;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-header {
+    margin-top: 70px;
+    /* Space for AppBar */
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.top-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 0 8px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: #fff !important;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+    background-color: transparent;
+}
+
+.table-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
+        font-size: medium;
+
+    /* adjust based on your layout */
+
+}
+
+.table-wrapper th {
+    position: sticky;
+    top: 0;
+    background-color: rgba(24, 24, 24, 0.9);
+    /* semi-transparent */
+    border: 3px solid rgba(163, 158, 158, 0.2);
+    color: white;
+    z-index: 1;
+    font-size: large;
+    font-weight: bolder;
+}
+
+/* Make the Paper wrapping the table transparent */
+.table-wrapper .MuiPaper-root {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.table-wrapper table {
+    border-collapse: collapse;
+    background-color: transparent !important;
+}
+
+
+
+.table-wrapper td {
+    background-color: transparent !important;
+    color: #fff;
+    border: 1px solid rgba(80, 78, 78, 0.2);
+    backdrop-filter: blur(4px);
+        font-size: medium;
+    /* optional: nice glass effect */
+
+}
+
+.modal-box {
+  width: 400px;
+  background-color: #181818;
+  border: 2px solid grey;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
