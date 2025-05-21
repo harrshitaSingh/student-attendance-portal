@@ -30,7 +30,7 @@ This application allows teachers to log in, add students, mark them as present o
    
 2. **Install backend dependencies:**
     ```bash
-     cd serve
+     cd server
      npm install
 
 4. **Install frontend dependencies:**
@@ -42,15 +42,15 @@ This application allows teachers to log in, add students, mark them as present o
    Create a .env file in the backend folder.
    Add your database URL and any other required configurations.
 
-7. **Run the application:**
-     **Start backend server:**
+7. **Start backend server:**
       ```bash
        npm run dev
-   **Start frontend React app:**
+
+8. **Start frontend React app:**
     ```bash
       npm start
 
-8. **Database Setup:**
+10. **Database Setup:**
    Ensure PostgreSQL is installed and running.
    Run Prisma migrations:
    ```bash
