@@ -4,7 +4,7 @@ import { signUpModel } from "../Models/signUpModel";
 import { Request, Response } from "express";
 import { loginModel } from "../Models/loginModel";
 
-export const signUp = async (req: Request<{}, {}, signUpModel>, res: Response) => {
+export const signUp = async (req: Request, res: Response) => {
 
     const { name, email, password, phone, school, role, subjects } = req.body;
 
@@ -71,7 +71,7 @@ export const signUp = async (req: Request<{}, {}, signUpModel>, res: Response) =
     }
 };
 
-export const login = async (req: Request<{}, {}, loginModel>, res: Response) => {
+export const login = async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     if (!email || !password) {

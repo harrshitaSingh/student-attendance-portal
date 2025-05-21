@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.signUp = void 0;
+exports.login = exports.signUp = void 0;
 const db_1 = __importDefault(require("../Config/db"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const signUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -53,7 +53,7 @@ const signUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         console.log("here3");
         return res.status(201).json({
             message: "User registered successfully",
-            user: {
+            teacher: {
                 id: newTeacher.id,
                 name: newTeacher.name,
                 email: newTeacher.email,
@@ -68,3 +68,33 @@ const signUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.signUp = signUp;
+const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("are u triggered");
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).json({ error: "All fields are required" });
+    }
+    try {
+        const teacher = yield db_1.default.teacher.findUnique({ where: { email } });
+        if (!teacher) {
+            return res.status(401).json({ error: "User not found" });
+        }
+        if (teacher.password !== password) {
+            return res.status(401).json({ error: "Invalid password" });
+        }
+        const token = jsonwebtoken_1.default.sign({ id: teacher.id, name: teacher.name, email: teacher.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
+        yield db_1.default.teacher.update({
+            where: { id: teacher.id },
+            data: { token }
+        });
+        return res.status(200).json({
+            message: "Login successful",
+            teacher: { id: teacher.id, name: teacher.name, email: teacher.email, token }
+        });
+    }
+    catch (error) {
+        console.error("Error during login:", error);
+        return res.status(500).json({ error: "Something went wrong, please try again." });
+    }
+});
+exports.login = login;

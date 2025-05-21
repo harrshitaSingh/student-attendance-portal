@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.signUp = void 0;
+exports.login = exports.signUp = void 0;
 var db_1 = require("../Config/db");
 var jsonwebtoken_1 = require("jsonwebtoken");
 var signUp = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
@@ -89,7 +89,7 @@ var signUp = function (req, res) { return __awaiter(void 0, void 0, void 0, func
                 console.log("here3");
                 return [2 /*return*/, res.status(201).json({
                         message: "User registered successfully",
-                        user: {
+                        teacher: {
                             id: newTeacher.id,
                             name: newTeacher.name,
                             email: newTeacher.email,
@@ -106,3 +106,45 @@ var signUp = function (req, res) { return __awaiter(void 0, void 0, void 0, func
     });
 }); };
 exports.signUp = signUp;
+var login = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, email, password, teacher, token, error_2;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
+            case 0:
+                console.log("are u triggered");
+                _a = req.body, email = _a.email, password = _a.password;
+                if (!email || !password) {
+                    return [2 /*return*/, res.status(400).json({ error: "All fields are required" })];
+                }
+                _b.label = 1;
+            case 1:
+                _b.trys.push([1, 4, , 5]);
+                return [4 /*yield*/, db_1.default.teacher.findUnique({ where: { email: email } })];
+            case 2:
+                teacher = _b.sent();
+                if (!teacher) {
+                    return [2 /*return*/, res.status(401).json({ error: "User not found" })];
+                }
+                if (teacher.password !== password) {
+                    return [2 /*return*/, res.status(401).json({ error: "Invalid password" })];
+                }
+                token = jsonwebtoken_1.default.sign({ id: teacher.id, name: teacher.name, email: teacher.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
+                return [4 /*yield*/, db_1.default.teacher.update({
+                        where: { id: teacher.id },
+                        data: { token: token }
+                    })];
+            case 3:
+                _b.sent();
+                return [2 /*return*/, res.status(200).json({
+                        message: "Login successful",
+                        teacher: { id: teacher.id, name: teacher.name, email: teacher.email, token: token }
+                    })];
+            case 4:
+                error_2 = _b.sent();
+                console.error("Error during login:", error_2);
+                return [2 /*return*/, res.status(500).json({ error: "Something went wrong, please try again." })];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); };
+exports.login = login;

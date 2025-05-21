@@ -13,9 +13,9 @@ function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
-    const {setUserState}= useContext(UserContext)
-      const [passwordVisibility, setPasswordVisibility] = useState(false);
-    
+    const { setUserState } = useContext(UserContext)
+    const [passwordVisibility, setPasswordVisibility] = useState(false);
+
 
     const navigate = useNavigate()
 
@@ -37,7 +37,7 @@ function LoginPage() {
             });
 
             const data = await response.json();
-           
+
 
             if (response.ok) {
                 setUserState(data.teacher);
@@ -52,7 +52,7 @@ function LoginPage() {
             setLoading(false);
         }
     };
-    
+
 
 
     const handlePasswordVisibilityToggle = () => {
@@ -124,7 +124,7 @@ function LoginPage() {
                             Adornment={{
                                 endAdornment: (
                                     <InputAdornment position="end">
-                                        <IconButton onClick={handlePasswordVisibilityToggle} edge="end" sx={{ color: "white", backgroundColor:"transparent"}}>
+                                        <IconButton onClick={handlePasswordVisibilityToggle} edge="end" sx={{ color: "white", backgroundColor: "transparent" }}>
                                             {passwordVisibility ? <VisibilityOff /> : <Visibility />}
                                         </IconButton>
 
