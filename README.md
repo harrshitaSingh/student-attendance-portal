@@ -27,3 +27,33 @@ This application allows teachers to log in, add students, mark them as present o
    ```bash
    git clone https://github.com/harrshitaSingh/student-attendance-tracker.git
    cd student-attendance-tracker
+   
+2. **Install backend dependencies:**
+    ```bash
+     cd serve
+     npm install
+
+4. **Install frontend dependencies:**
+    ```bash
+    cd client
+    npm install
+
+6. **Configure environment variables:**
+   Create a .env file in the backend folder.
+   Add your database URL and any other required configurations.
+
+7. **Run the application:**
+     **Start backend server:**
+      ```bash
+       npm run dev
+   **Start frontend React app:**
+    ```bash
+      npm start
+
+8. **Database Setup:**
+   Ensure PostgreSQL is installed and running.
+   Run Prisma migrations:
+   ```bash
+   npx prisma migrate dev --name init
+
+
