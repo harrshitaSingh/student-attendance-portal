@@ -3,7 +3,7 @@
 A full-stack **Student Attendance Tracker** built with **Node.js**, **React.js**, **Express.js**, **PostgreSQL**, and **Prisma ORM**.  
 This application allows teachers to log in, add students, mark them as present or absent, and view real-time attendance updates with graphical representations.
 
-![Login Screenshot](./client/src/Assets/Images/loginss.png)
+![Login Screenshot](client/src/Assets/Images/loginss.png)
 
 ## Features
 
